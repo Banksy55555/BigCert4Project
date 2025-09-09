@@ -20,7 +20,7 @@
 | 3. Trello | Provide a trello board that displays the tasks under development and or completed. This will further back up the gantt chart and provide the client with a process of completion. |
 | 4. Model Prototype | Provide a graphical prototype for the cybersecurity model typology inclduing all devices and connections. This will be produced in Cisco Packet Tracer. |
 | 5. Meeting Minutes Reports | Provide reports of meetings discussing the project development. Meeting minutes provide a clear way of documenting the process of collaboration and planning. |
-| 7. Completed cybersecurity Model | Provide the final completed cybersecurity model including all connections and configurations as planned during phase 2: Core Infrastructure Build and Configuration. |
+| 6. Completed cybersecurity Model | Provide the final completed cybersecurity model including all connections and configurations as planned during phase 2: Core Infrastructure Build and Configuration. |
 
 
 
