@@ -12,7 +12,7 @@ Item cost
 | Kali server:  | 250 | 1 | 250 |
 | Linux server:  | 250 | 1 | 250 |
 
-The total cost of the items used is:  $
+The total cost of the items used is:  $ 12860
 
 Staff cost
 
