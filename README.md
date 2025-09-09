@@ -3,7 +3,7 @@
 * Date Submitted: DD/MM/YYYY
 
 
-#### Project Objective / Main Scope:
+#### 1. Project Objective / Main Scope:
 * The objective of this team project is to conceptualize, develop, test, and deploy a network as per the requirements and network typology diagram. The project documentation will assist in the planning and initiation of the network prototype. The cybersecurity prototype model (CSOC) will be designed and produced for a small to medium sized organisation. 
 
 * The project is to be completed in november 2025, with our aim for completion being mid to late november. The project will be completed alongside a presentation that will dicuss the process of planning, developing, and finalising of the cybersecurity model. The latest date we can complete the project is the 28th of November 2025.
@@ -12,7 +12,7 @@
 
 ***
 
-#### Project Deliverables:
+#### 2. Project Deliverables:
 | Deliverable No. | Description |
 | -------- | ------- |
 | 1. Documentaion | Provide clear documention for the planning of the cybersecurity model project. |
@@ -22,36 +22,45 @@
 | 5. Meeting Minutes Reports | Provide reports of meetings discussing the project development. Meeting minutes provide a clear way of documenting the process of collaboration and planning. |
 | 6. Completed cybersecurity Model | Provide the final completed cybersecurity model including all connections and configurations as planned during phase 2: Core Infrastructure Build and Configuration. |
 
+***
 
+#### 3. List of Project Tasks (Work Breakdown Structure)
+| Task No. | Description |
+| -------- | ------- |
+| 1. | {WBS Item} |
 
 ***
 
-#### List of Project Tasks (Work Breakdown Structure)
+#### 4. Out of Scope
 * 
 
 ***
 
-#### Out of Scope
+#### 5. Project Assumptions
 * 
 
 ***
 
-#### Project Assumptions
+#### 6. Project Constraints
+| Task No. | Description |
+| -------- | ------- |
+| Project Start Date | 2nd September 2025 |
+| Launch / Go-Live Date | Late November 2025 |
+| Project End Date | Late November 2025 |
+| Hard Deadline | 28th November 2025 |
+| Budget Constraints | {text here} |
+| Quality / Performance Constraints | {text here} |
+| Equipment / Personal Constraints | {text here} |
+| Regulatory Constraints | {text here} |
+
+***
+
+#### 7. Updated Estimates
 * 
 
 ***
 
-#### Project Constraints
-* 
-
-***
-
-#### Updated Estimates
-* 
-
-***
-
-#### Approvals
+#### 8. Approvals
 * 
 
 ***
