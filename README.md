@@ -13,11 +13,21 @@
 ***
 
 #### Project Deliverables:
-| Month | Savings |
+| Deliverable No. | Description |
 | -------- | ------- |
-| January | $250 |
-| February | $80 |
-| March | $420 |
+| 1. Documentaion | Provide clear documention for the planning of the cybersecurity model project. |
+
+| 2. Gantt Chart | Provide a gantt chart that lists each step of the process with the estimated time frame for completing such step. |
+
+| 3. Trello | Provide a trello board that displays the tasks under development and or completed. This will further back up the gantt chart and provide the client with a process of completion. |
+
+| 4. Model Prototype | Provide a graphical prototype for the cybersecurity model typology inclduing all devices and connections. This will be produced in Cisco Packet Tracer. |
+
+| 5. Meeting Minutes Reports | Provide reports of meetings discussing the project development. Meeting minutes provide a clear way of documenting the process of collaboration and planning. |
+
+| 7. Completed cybersecurity Model | Provide the final completed cybersecurity model including all connections and configurations as planned during phase 2: Core Infrastructure Build and Configuration. |
+
+
 
 ***
 
