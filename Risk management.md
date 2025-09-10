@@ -8,3 +8,10 @@
 | VMs crashing | High | Take regular snapshots and exports. |
 | Sharp objects | High | Making sure that there aren't any wire prongs sticking out and are careful is metal on any of the hardware components. |
 | Hardware failure| High | Regularly perform backups for data and implement a RAID system. |
+
+__Mitigating existing risks__
+
+Employing firewalls, encryption, multi-factor authentication, and intrusion detection systems to protect against cyber threats.
+Regularly updating and patching software to address known vulnerabilities and weaknesses.
+Establish a backup and recovery strategy to restore data in case of data loss or hardware loss.
+Continuously  monitor risk
