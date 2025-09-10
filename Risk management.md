@@ -11,7 +11,7 @@
 
 __Mitigating existing risks__
 
-Employing firewalls, encryption, multi-factor authentication, and intrusion detection systems to protect against cyber threats.
-Regularly updating and patching software to address known vulnerabilities and weaknesses.
-Establish a backup and recovery strategy to restore data in case of data loss or hardware loss.
-Continuously  monitor risk
+Employing firewalls, encryption, multi-factor authentication, and intrusion detection systems to protect against cyber threats. <br>
+Regularly updating and patching software to address known vulnerabilities and weaknesses.<br>
+Establish a backup and recovery strategy to restore data in case of data loss or hardware loss.<br>
+Continuously  monitor risk<br>
