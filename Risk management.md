@@ -7,4 +7,4 @@
 | Training | Moderate | Make sure that all involved have the correct training and know what they need to in order to complete the task. |
 | VMs crashing | High | Take regular snapshots and exports. |
 | Sharp objects | High | Making sure that there aren't any wire prongs sticking out and are careful is metal on any of the hardware components. |
-
+| Hardware failure| High | Regularly perform backups for data and implement a RAID system. |
