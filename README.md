@@ -1,5 +1,5 @@
 # Big Certificate 4 Project - Scope {Working Name}
-## Team: Mitchell B, Liam D, Adam C Br,yce D
+## Team: Mitchell B, Liam D, Adam C, Bryce D
 * Date Submitted: DD/MM/YYYY
 
 
