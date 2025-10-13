@@ -27,7 +27,9 @@
 #### 3. List of Project Tasks (Work Breakdown Structure)
 | Task No. | Description |
 | -------- | ------- |
-| 1. | {WBS Item} |
+| 1. | Connect network devices |
+| 2. | Configure Switch (Config, VLANS, Security) |
+| 2. | Configure Firewall (Static IP, Zones, Default route, Timezones, Service Routes, Source NAT, Security, DHCP) |
 
 ***
 
