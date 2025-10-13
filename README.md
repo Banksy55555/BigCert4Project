@@ -27,9 +27,32 @@
 #### 3. List of Project Tasks (Work Breakdown Structure)
 | Task No. | Description |
 | -------- | ------- |
-| 1. | Connect network devices |
-| 2. | Configure Switch (Config, VLANS, Security) |
-| 2. | Configure Firewall (Static IP, Zones, Default route, Timezones, Service Routes, Source NAT, Security, DHCP) |
+| 1. | Set up and interconnect networking infrastructure
+   1.1 IP addresses
+   1.2 Palo Alto Firewall – basic setup
+   1.3 Palo Alto Firewall – basic feature configuration
+       1.3.1 Static IP on Ethernet interface E1/1
+       1.3.2 Zones
+       1.3.3 Default static route in virtual router
+       1.3.4 Device timezone
+       1.3.5 Service routes
+       1.3.6 Configure Source NAT from LAN to WAN (PAT)
+       1.3.7 Configure base security policy: allow any from LAN to WAN
+       1.3.8 Set up management profile to allow firewall management from host in internal network
+   1.4 Switch SW1 – basic setup
+       1.4.1 Clear switch config
+       1.4.2 VLAN1 – 192.168.100.254/24 for remote management via SSH
+       1.4.3 No port security at this stage
+   1.5 Cable up physical network according to network diagram
+   1.6 Palo Alto Firewall DHCP server
+   1.7 Test PA firewall and switch
+       1.7.1 Check PC Internet connectivity
+       1.7.2 Telnet from your PC to the switch management IP
+       1.7.3 Check you can manage the firewall from inside-management-profile
+   1.8 Time estimate: 24 hours |
+
+
+
 
 ***
 
