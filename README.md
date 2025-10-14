@@ -1,6 +1,8 @@
 # Big Certificate 4 Project - Scope {Working Name}
 ## Team: Mitchell B, Liam D, Adam C, Bryce D
 * Date Submitted: DD/MM/YYYY
+* Date Started: 02/09/2025
+
 
 
 #### 1. Project Objective / Main Scope:
@@ -95,19 +97,9 @@ Continuously  monitor risk<br>
 | Launch / Go-Live Date | Late November 2025 |
 | Project End Date | Late November 2025 |
 | Hard Deadline | 28th November 2025 |
-| Budget Constraints | {text here} |
-| Quality / Performance Constraints | {text here} |
-| Equipment / Personal Constraints | {text here} |
-| Regulatory Constraints | {text here} |
-
-***
-
-#### 7. Updated Estimates
-* 
-
-***
-
-#### 8. Approvals
-* 
+| Budget Constraints | Late November 2025 |
+| Quality / Performance Constraints | Late November 2025 |
+| Equipment / Personal Constraints | Late November 2025 |
+| Regulatory Constraints | Late November 2025 |
 
 ***
