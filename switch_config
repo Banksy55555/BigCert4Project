@@ -1,12 +1,11 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.11.11 13:26:27 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.11.11 15:03:03 =~=~=~=~=~=~=~=~=~=~=~=
 
-S1#terminal length 0
-S1#show running-confug  ig
+S1#show running-config
 Building configuration...
 
-Current configuration : 1854 bytes
+Current configuration : 2070 bytes
 !
-! Last configuration change at 00:09:18 UTC Mon Mar 1 1993
+! Last configuration change at 01:46:57 UTC Mon Mar 1 1993
 !
 version 15.0
 no service pad
@@ -26,7 +25,7 @@ system mtu routing 1500
 !
 !
 ip domain-name csoc.local
-!
+ --More--         !
 !
 !
 !
@@ -46,12 +45,20 @@ ip ssh version 2
 !
 !
 interface FastEthernet0/1
+ switchport trunk allowed vlan 50,100
+ switchport mode trunk
 !
-interface FastEthernet0/2
+ --More--         interface FastEthernet0/2
+ switchport access vlan 100
+ switchport mode access
 !
 interface FastEthernet0/3
+ switchport access vlan 50
+ switchport mode access
 !
 interface FastEthernet0/4
+ switchport access vlan 100
+ switchport mode access
 !
 interface FastEthernet0/5
 !
@@ -64,7 +71,7 @@ interface FastEthernet0/7
 interface FastEthernet0/8
  shutdown
 !
-interface FastEthernet0/9
+ --More--         interface FastEthernet0/9
  shutdown
 !
 interface FastEthernet0/10
@@ -87,7 +94,7 @@ interface FastEthernet0/15
 !
 interface FastEthernet0/16
  shutdown
-!
+ --More--         !
 interface FastEthernet0/17
  shutdown
 !
@@ -110,7 +117,7 @@ interface FastEthernet0/23
  shutdown
 !
 interface FastEthernet0/24
- shutdown
+ --More--          shutdown
 !
 interface GigabitEthernet0/1
 !
@@ -133,7 +140,7 @@ line vty 0 4
  access-class 10 in
  password 7 070C285F4D06
  login
- transport input ssh
+ --More--          transport input ssh
 line vty 5 15
  login
 !
