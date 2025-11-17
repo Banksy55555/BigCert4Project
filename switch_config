@@ -1,17 +1,22 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.11.11 15:03:03 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.11.18 10:40:35 =~=~=~=~=~=~=~=~=~=~=~=
 
-S1#show running-config
+S1#
+S1#end
+Translating "end"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+S1#
+S1#show runnign    nng  g-config
 Building configuration...
 
-Current configuration : 2070 bytes
+Current configuration : 2959 bytes
 !
-! Last configuration change at 01:46:57 UTC Mon Mar 1 1993
+! Last configuration change at 23:29:49 UTC Sat Mar 6 1993
 !
 version 15.0
 no service pad
 service timestamps debug datetime msec
 service timestamps log datetime msec
-service password-encryption
+no service password-encryption
 !
 hostname S1
 !
@@ -19,13 +24,13 @@ boot-start-marker
 boot-end-marker
 !
 !
-username admin privilege 15 secret 5 $1$202E$4j3202t1wp7TBS2t18Oom/
+username cisco password 0 class
 no aaa new-model
 system mtu routing 1500
 !
 !
 ip domain-name csoc.local
- --More--         !
+!
 !
 !
 !
@@ -38,7 +43,6 @@ spanning-tree extend system-id
 !
 vlan internal allocation policy ascending
 !
-ip ssh version 2
 !
 !
 !
@@ -48,7 +52,7 @@ interface FastEthernet0/1
  switchport trunk allowed vlan 50,100
  switchport mode trunk
 !
- --More--         interface FastEthernet0/2
+interface FastEthernet0/2
  switchport access vlan 100
  switchport mode access
 !
@@ -61,86 +65,125 @@ interface FastEthernet0/4
  switchport mode access
 !
 interface FastEthernet0/5
+ switchport access vlan 100
+ switchport mode access
 !
 interface FastEthernet0/6
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/7
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/8
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
- --More--         interface FastEthernet0/9
+interface FastEthernet0/9
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/10
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/11
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/12
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/13
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/14
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/15
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/16
+ switchport access vlan 100
+ switchport mode access
  shutdown
- --More--         !
+!
 interface FastEthernet0/17
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/18
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/19
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/20
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/21
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/22
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/23
+ switchport access vlan 100
+ switchport mode access
  shutdown
 !
 interface FastEthernet0/24
- --More--          shutdown
+ switchport access vlan 100
+ switchport mode access
+ shutdown
 !
 interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
 !
 interface Vlan1
- ip address 192.168.100.254 255.255.255.0
+ no ip address
+ shutdown
 !
 ip http server
 ip http secure-server
 logging trap debugging
-logging host 192.168.100.200
-access-list 10 permit 192.168.100.0 0.0.0.255
+logging host 192.168.100.100
 !
 !
 line con 0
- password 7 070C285F4D06
+ password cisco
  login
 line vty 0 4
- access-class 10 in
- password 7 070C285F4D06
+ password cisco
  login
- --More--          transport input ssh
+ transport input ssh
 line vty 5 15
  login
 !
