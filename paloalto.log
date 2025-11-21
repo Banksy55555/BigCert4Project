@@ -1,0 +1,705 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.11.21 11:38:01 =~=~=~=~=~=~=~=~=~=~=~=
+
+admin@PA-440> show 
+[K   admin@PA-440> show running 
+[K   admin@PA-440> show running [K   [K   [K   [K   [K   [K   [K   condi[K   [K   fig 
+[K   admin@PA-440> show config running
+[?1h=
+config {
+  mgt-config {
+    users {
+      admin {
+        phash $5$idylxngg$cwDSXQoqf4zkd.cdWso18DJWByQN6PYLrx3rd9Z54D.;
+        permissions {
+          role-based {
+            superuser yes;
+          }
+        }
+      }
+    }
+    password-complexity {
+      enabled yes;
+      minimum-length 8;
+    }
+  }
+  shared {
+    application;
+    application-group;
+    service;
+    service-group;
+[7m  lines 1-23[m  [K   
+[K       botnet {
+      configuration {
+        http {
+          dynamic-dns {
+            enabled yes;
+            threshold 5;
+          }
+          malware-sites {
+            enabled yes;
+            threshold 5;
+          }
+          recent-domains {
+            enabled yes;
+            threshold 5;
+          }
+          ip-domains {
+            enabled yes;
+            threshold 10;
+          }
+          executables-from-unknown-sites {
+            enabled yes;
+            threshold 5;
+          }
+[7m  lines 24-46[m  [K   
+[K           }
+        other-applications {
+          irc yes;
+        }
+        unknown-applications {
+          unknown-tcp {
+            destinations-per-hour 10;
+            sessions-per-hour 10;
+            session-length {
+              maximum-bytes 100;
+              minimum-bytes 50;
+            }
+          }
+          unknown-udp {
+            destinations-per-hour 10;
+            sessions-per-hour 10;
+            session-length {
+              maximum-bytes 100;
+              minimum-bytes 50;
+            }
+          }
+        }
+      }
+[7m  lines 47-69[m  [K   
+[K         report {
+        topn 100;
+        scheduled yes;
+      }
+    }
+    log-settings {
+      syslog {
+        SyslogToUbuntuServerSIEM {
+          server {
+            UbuntuServerSIEM {
+              transport TCP;
+              port 9001;
+              format IETF;
+              server 192.168.100.200;
+              facility LOG_USER;
+            }
+          }
+        }
+      }
+    }
+  }
+  devices {
+    localhost.localdomain {
+[7m  lines 70-92[m  [K   
+[K         network {
+        interface {
+          ethernet {
+            ethernet1/1 {
+              layer3 {
+                ndp-proxy {
+                  enabled no;
+                }
+                sdwan-link-settings {
+                  upstream-nat {
+                    enable no;
+                    static-ip;
+                  }
+                  enable no;
+                }
+                lldp {
+                  enable no;
+                }
+                dhcp-client;
+              }
+            }
+            ethernet1/2 {
+              layer3 {
+[7m  lines 93-115[m  [K   
+[K                   ndp-proxy {
+                  enabled no;
+                }
+                sdwan-link-settings {
+                  upstream-nat {
+                    enable no;
+                    static-ip;
+                  }
+                  enable no;
+                }
+                lldp {
+                  enable no;
+                }
+                units {
+                  ethernet1/2.100 {
+                    ipv6 {
+                      neighbor-discovery {
+                        router-advertisement {
+                          enable no;
+                        }
+                      }
+                    }
+                    sdwan-link-settings {
+[7m  lines 116-138[m  [K   
+[K                         upstream-nat {
+                        enable no;
+                      }
+                      enable no;
+                    }
+                    ndp-proxy {
+                      enabled no;
+                    }
+                    adjust-tcp-mss {
+                      enable no;
+                    }
+                    tag 100;
+                    comment "LAN VLAN";
+                    ip {
+                      192.168.100.1/24;
+                    }
+                    interface-management-profile "LAN Management Profile";
+                  }
+                  ethernet1/2.50 {
+                    ipv6 {
+                      neighbor-discovery {
+                        router-advertisement {
+                          enable no;
+[7m  lines 139-161[m  [K   
+[K                           }
+                      }
+                    }
+                    sdwan-link-settings {
+                      upstream-nat {
+                        enable no;
+                      }
+                      enable no;
+                    }
+                    ndp-proxy {
+                      enabled no;
+                    }
+                    adjust-tcp-mss {
+                      enable no;
+                    }
+                    tag 50;
+                    comment "DMZ VLAN";
+                    ip {
+                      192.168.50.1/24;
+                    }
+                  }
+                }
+                ip {
+[7m  lines 162-184[m  [K   
+[K                     192.168.50.10;
+                }
+              }
+              comment DHCP;
+            }
+          }
+          loopback {
+            units;
+          }
+          vlan {
+            units;
+          }
+          tunnel {
+            units;
+          }
+        }
+        vlan;
+        virtual-wire;
+        profiles {
+          monitor-profile {
+            default {
+              interval 3;
+              threshold 5;
+[7m  lines 185-207[m  [K   
+[K                 action wait-recover;
+            }
+          }
+          interface-management-profile {
+            "LAN Management Profile" {
+              http yes;
+              https yes;
+              ping yes;
+            }
+          }
+        }
+        ike {
+          crypto-profiles {
+            ike-crypto-profiles {
+              default {
+                encryption [ aes-128-cbc 3des];
+                hash sha1;
+                dh-group group2;
+                lifetime {
+                  hours 8;
+                }
+              }
+              Suite-B-GCM-128 {
+[7m  lines 208-230[m  [K   
+[K                   encryption aes-128-cbc;
+                hash sha256;
+                dh-group group19;
+                lifetime {
+                  hours 8;
+                }
+              }
+              Suite-B-GCM-256 {
+                encryption aes-256-cbc;
+                hash sha384;
+                dh-group group20;
+                lifetime {
+                  hours 8;
+                }
+              }
+            }
+            ipsec-crypto-profiles {
+              default {
+                esp {
+                  encryption [ aes-128-cbc 3des];
+                  authentication sha1;
+                }
+                dh-group group2;
+[7m  lines 231-253[m  [K   
+[K                   lifetime {
+                  hours 1;
+                }
+              }
+              Suite-B-GCM-128 {
+                esp {
+                  encryption aes-128-gcm;
+                  authentication none;
+                }
+                dh-group group19;
+                lifetime {
+                  hours 1;
+                }
+              }
+              Suite-B-GCM-256 {
+                esp {
+                  encryption aes-256-gcm;
+                  authentication none;
+                }
+                dh-group group20;
+                lifetime {
+                  hours 1;
+                }
+[7m  lines 254-276[m  [K   
+[K                 }
+            }
+            global-protect-app-crypto-profiles {
+              default {
+                encryption aes-128-cbc;
+                authentication sha1;
+              }
+            }
+          }
+        }
+        qos {
+          profile {
+            default {
+              class-bandwidth-type {
+                mbps {
+                  class {
+                    class1 {
+                      priority real-time;
+                    }
+                    class2 {
+                      priority high;
+                    }
+                    class3 {
+[7m  lines 277-299[m  [K   
+[K                         priority high;
+                    }
+                    class4 {
+                      priority medium;
+                    }
+                    class5 {
+                      priority medium;
+                    }
+                    class6 {
+                      priority low;
+                    }
+                    class7 {
+                      priority low;
+                    }
+                    class8 {
+                      priority low;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+[7m  lines 300-322[m  [K   
+[K           virtual-router {
+          default {
+            protocol {
+              bgp {
+                enable no;
+                dampening-profile {
+                  default {
+                    cutoff 1.25;
+                    reuse 0.5;
+                    max-hold-time 900;
+                    decay-half-life-reachable 300;
+                    decay-half-life-unreachable 900;
+                    enable yes;
+                  }
+                }
+              }
+            }
+            interface [ ethernet1/1 ethernet1/2.100 ethernet1/2.50 ethernet1/2];
+          }
+        }
+        dhcp {
+          interface {
+            ethernet1/2.100 {
+[7m  lines 323-345[m  [K   
+[K                 server {
+                option {
+                  dns {
+                    primary 192.168.100.100;
+                    secondary 1.1.1.1;
+                  }
+                  lease {
+                    unlimited;
+                  }
+                  gateway 192.168.100.1;
+                  subnet-mask 255.255.255.0;
+                }
+                ip-pool 192.168.100.0/24;
+                reserved {
+                  192.168.100.1;
+                  192.168.100.100;
+                  192.168.100.200;
+                }
+                mode auto;
+              }
+            }
+            ethernet1/2.50 {
+              server {
+[7m  lines 346-368[m  [K   
+[K                   option {
+                  dns {
+                    primary 192.168.100.100;
+                    secondary 1.1.1.1;
+                  }
+                  lease {
+                    unlimited;
+                  }
+                  gateway 192.168.50.1;
+                  subnet-mask 255.255.255.0;
+                }
+                ip-pool 192.168.50.0/24;
+                mode auto;
+              }
+            }
+          }
+        }
+        dns-proxy {
+          "DMZ DNS Proxy" {
+            cache {
+              max-ttl {
+                enabled no;
+              }
+[7m  lines 369-391[m  [K   
+[K                 enabled yes;
+            }
+            default {
+              primary 1.1.1.1;
+              secondary 1.0.0.1;
+            }
+            tcp-queries {
+              enabled no;
+            }
+            interface ethernet1/2.50;
+          }
+        }
+      }
+      deviceconfig {
+        system {
+          ip-address 192.168.1.1;
+          netmask 255.255.255.0;
+          update-server updates.paloaltonetworks.com;
+          update-schedule {
+            threats {
+              recurring {
+                weekly {
+                  day-of-week wednesday;
+[7m  lines 392-414[m  [K   
+[K                     at 01:02;
+                  action download-only;
+                }
+              }
+            }
+          }
+          timezone Australia/Melbourne;
+          service {
+            disable-telnet yes;
+            disable-http yes;
+          }
+          hostname PA-440;
+          device-telemetry {
+            device-health-performance yes;
+            product-usage yes;
+            threat-prevention yes;
+            region Americas;
+          }
+          route {
+            service {
+              syslog {
+                source {
+                  address 192.168.100.1/24;
+[7m  lines 415-437[m  [K   
+[K                     interface ethernet1/2.100;
+                }
+              }
+            }
+          }
+        }
+        setting {
+          config {
+            rematch yes;
+          }
+          management {
+            hostname-type-in-syslog FQDN;
+          }
+        }
+      }
+      vsys {
+        vsys1 {
+          application;
+          application-group;
+          zone {
+            trust {
+              network {
+                virtual-wire;
+[7m  lines 438-460[m  [K   
+[K                 }
+            }
+            untrust {
+              network {
+                virtual-wire;
+              }
+            }
+            LAN {
+              network {
+                layer3 [ ethernet1/2.100 ethernet1/2];
+              }
+            }
+            DMZ {
+              network {
+                layer3 ethernet1/2.50;
+              }
+            }
+            WAN {
+              network {
+                layer3 ethernet1/1;
+              }
+            }
+          }
+[7m  lines 461-483[m  [K   
+[K             service;
+          service-group;
+          schedule;
+          rulebase {
+            security {
+              rules {
+                "LAN to DMZ" e7acebc7-779f-4186-be55-e552519dda1d {
+                  to DMZ;
+                  from LAN;
+                  source any;
+                  destination any;
+                  source-user any;
+                  category any;
+                  application any;
+                  service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start yes;
+                  log-end yes;
+                  log-setting UbuntuServerSIEMProfile;
+                }
+                "DMZ to LAN" a99d114f-2b37-41d2-92c0-89b01ee2e5c1 {
+[7m  lines 484-506[m  [K   
+[K                     to LAN;
+                  from DMZ;
+                  source any;
+                  destination any;
+                  source-user any;
+                  category any;
+                  application any;
+                  service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start yes;
+                  log-end yes;
+                  log-setting UbuntuServerSIEMProfile;
+                }
+                "DMZ to WAN" 09e37cc7-9126-4e94-b6cd-28aca2b0034d {
+                  to WAN;
+                  from DMZ;
+                  source any;
+                  destination any;
+                  source-user any;
+                  category any;
+                  application any;
+[7m  lines 507-529[m  [K   
+[K                     service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start yes;
+                  log-end yes;
+                  log-setting UbuntuServerSIEMProfile;
+                }
+                "LAN to WAN" 7ce02ba9-eb22-46d9-87a9-c4e3a530aa98 {
+                  to WAN;
+                  from LAN;
+                  source any;
+                  destination any;
+                  source-user any;
+                  category any;
+                  application any;
+                  service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start yes;
+                  log-end yes;
+                  log-setting UbuntuServerSIEMProfile;
+[7m  lines 530-552[m  [K   
+[K                   }
+                DMZ-to-inside-SIEM b8430094-fb53-4b62-99e5-ba5649074737 {
+                  to LAN;
+                  from DMZ;
+                  source 192.168.50.50;
+                  destination any;
+                  source-user any;
+                  application any;
+                  service any;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start no;
+                  log-end yes;
+                  category any;
+                  log-setting UbuntuServerSIEMProfile;
+                }
+                outside-to-DMZ-remote-MGT c2d2339c-a0ad-4a1d-9b12-e1800909dfd3 {
+                  to DMZ;
+                  from LAN;
+                  source any;
+                  destination 192.168.108.100;
+                  source-user any;
+[7m  lines 553-575[m  [K   
+[K                     category any;
+                  application [ ms-rdp mysql ssh];
+                  service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start yes;
+                  log-end yes;
+                  log-setting UbuntuServerSIEMProfile;
+                }
+                "DMZ DNS" cabe2c5c-35a6-4ba1-bcff-18a4c4d6e890 {
+                  to LAN;
+                  from DMZ;
+                  source any;
+                  destination any;
+                  source-user any;
+                  category any;
+                  application dns;
+                  service application-default;
+                  source-hip any;
+                  destination-hip any;
+                  action allow;
+                  log-start no;
+[7m  lines 576-598[m  [K   
+[K                     log-end yes;
+                }
+              }
+            }
+            nat {
+              rules {
+                "Masquerade for WAN" a499d87e-d004-4172-b057-99bc856908e7 {
+                  source-translation {
+                    dynamic-ip-and-port {
+                      interface-address {
+                        interface ethernet1/1;
+                      }
+                    }
+                  }
+                  to WAN;
+                  from LAN;
+                  source any;
+                  destination any;
+                  service any;
+                }
+                "DMZ to WAN" f66b29b2-8abd-469f-beb5-29cb27acb5d3 {
+                  source-translation {
+                    dynamic-ip-and-port {
+[7m  lines 599-621[m  [K   
+[K                         interface-address {
+                        interface ethernet1/1;
+                      }
+                    }
+                  }
+                  to WAN;
+                  from DMZ;
+                  source any;
+                  destination any;
+                  service any;
+                  description "DMZ internet";
+                }
+              }
+            }
+          }
+          import {
+            network {
+              interface [ ethernet1/1 ethernet1/2 ethernet1/2.100 ethernet1/2.50 ];
+            }
+          }
+          log-settings {
+            profiles {
+[7m  lines 622-643[m  [K   
+[K                 UbuntuServerSIEMProfile {
+                match-list {
+                  LogTraffic {
+                    send-syslog SyslogToUbuntuServerSIEM;
+                    log-type traffic;
+                    filter "All Logs";
+                    send-to-panorama no;
+                    quarantine no;
+                  }
+                  LogThreat {
+                    send-syslog SyslogToUbuntuServerSIEM;
+                    log-type threat;
+                    filter "All Logs";
+                    send-to-panorama no;
+                    quarantine no;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+[7m  lines 644-666[m  [K   
+[K     }
+}
+
+
